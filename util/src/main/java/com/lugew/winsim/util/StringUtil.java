@@ -16,6 +16,14 @@ public class StringUtil {
         return null == s || EMPTY.equals(s);
     }
 
+    public boolean isNotEmpty(Object object) {
+        return object instanceof String && !((String) object).isEmpty();
+    }
+
+    public boolean isEmpty(Object object) {
+        return !isNotEmpty(object);
+    }
+
     public boolean isNotEmpty(String s) {
         return !isEmpty(s);
     }

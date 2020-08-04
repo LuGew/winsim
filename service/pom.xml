@@ -5,10 +5,9 @@
     <parent>
         <groupId>com.lugew.winsim</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.1-RELEASE</version>
+        <version>1.0.2-RELEASE</version>
     </parent>
     <artifactId>service</artifactId>
-    <version>1.0.1-RELEASE</version>
     <name>service</name>
     <description>service</description>
 
@@ -16,13 +15,13 @@
         <dependency>
             <groupId>com.lugew.winsim</groupId>
             <artifactId>mapper</artifactId>
-            <version>1.0.1-RELEASE</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.lugew.winsim</groupId>
             <artifactId>util</artifactId>
-            <version>1.0.1-RELEASE</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

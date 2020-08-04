@@ -3,7 +3,7 @@ package com.lugew.winsim.entity;
 import com.lugew.winsim.entity.validator.Add;
 import com.lugew.winsim.entity.validator.Delete;
 import com.lugew.winsim.entity.validator.Update;
-import com.lugew.winsim.util.UUIDGenerator;
+import com.lugew.winsim.entity.util.UUIDGenerator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import tk.mybatis.mapper.annotation.KeySql;

@@ -6,9 +6,10 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import com.lugew.winsim.entity.validator.Add;
 import com.lugew.winsim.entity.validator.Delete;
 import com.lugew.winsim.entity.validator.Update;
-import com.lugew.winsim.util.SnowflakeIDGenerator;
+import com.lugew.winsim.entity.util.SnowflakeIDGenerator;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import tk.mybatis.mapper.annotation.KeySql;
 
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ import javax.validation.constraints.Null;
  * @author LuGew
  * @since 2020/5/1
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class SnowflakeIDEntity extends AbstractEntity<Long> {
     @Id

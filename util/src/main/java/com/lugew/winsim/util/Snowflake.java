@@ -37,14 +37,12 @@ public class Snowflake {
 
     private void ensureWorkerId() {
         if (workerId > maxWorkerId || workerId < 0) {
-//            throw new IllegalArgumentException("worker Id can't be greater than {0} or less than 0,work id:{1}", maxWorkerId, workerId);
             throw new IllegalArgumentException("worker Id can't be greater than {0} or less than 0,work id:{1}");
         }
     }
 
     private void ensureDataCenterId() {
         if (dataCenterId > maxDataCenterId || dataCenterId < 0) {
-//            throw new IllegalArgumentException("data center Id can't be greater than {0} or less than 0,data center id:{1}", maxDataCenterId, dataCenterId);
             throw new IllegalArgumentException("data center Id can't be greater than {0} or less than 0,data center id:{1}");
         }
 
@@ -55,7 +53,6 @@ public class Snowflake {
         if (timestamp < lastTimestamp) {
             log.error("clock is moving backwards.  Rejecting requests until {}.", lastTimestamp);
             throw new IllegalArgumentException("Clock moved backwards.  Refusing to generate id for {0} milliseconds");
-//            throw new InvalidSystemClock("Clock moved backwards.  Refusing to generate id for {0} milliseconds", lastTimestamp - timestamp);
         }
 
         if (lastTimestamp == timestamp) {

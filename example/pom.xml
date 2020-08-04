@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-parent</artifactId>
+        <version>2.3.0.RELEASE</version>
+    </parent>
+    <artifactId>example</artifactId>
+    <name>example</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <spring.boot.version>2.3.0.RELEASE</spring.boot.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <build.plugins.plugin.version>2.3.0.RELEASE</build.plugins.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <lombok.version>1.18.12</lombok.version>
+        <mybatis.spring.boot.starter.version>2.1.3</mybatis.spring.boot.starter.version>
+        <mybatis.spring.boot.starter.test.version>2.1.3</mybatis.spring.boot.starter.test.version>
+        <pagehelper.spring.boot.starter.version>1.2.5</pagehelper.spring.boot.starter.version>
+        <tk.mybatis.version>2.1.5</tk.mybatis.version>
+        <fastjson.version>1.2.68</fastjson.version>
+        <druid.version>1.1.22</druid.version>
+        <commons.io.version>2.5</commons.io.version>
+        <commons.fileupload.version>1.3.3</commons.fileupload.version>
+        <bitwalker.version>1.19</bitwalker.version>
+        <jwt.version>0.9.0</jwt.version>
+        <swagger.version>2.9.2</swagger.version>
+        <poi.version>3.17</poi.version>
+        <oshi.version>3.9.1</oshi.version>
+        <velocity.version>1.7</velocity.version>
+        <mysql.version>8.0.20</mysql.version>
+        <jna.platform.version>5.5.0</jna.platform.version>
+        <jna.version>5.5.0</jna.version>
+        <quartz.version>2.3.2</quartz.version>
+        <guava.version>23.0</guava.version>
+        <freemaker.version>2.3.30</freemaker.version>
+        <mybatis.typehandlers.jsr>1.0.2</mybatis.typehandlers.jsr>
+        <hutool.all>5.3.7</hutool.all>
+        <winsim.version>1.0.2-RELEASE</winsim.version>
+        <knife4j.version>2.0.4</knife4j.version>
+        <h2.version>1.4.200</h2.version>
+        <email.version>1.6.0</email.version>
+        <spring.security.test.version>5.3.3.RELEASE</spring.security.test.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.lugew.winsim</groupId>
+            <artifactId>winsim-starter</artifactId>
+            <version>${winsim.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!-- SpringBoot Web容器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Mysql驱动包 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!--阿里数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+        <!-- 阿里JSON解析器 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

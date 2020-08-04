@@ -5,7 +5,7 @@
 
     <groupId>com.lugew.winsim</groupId>
     <artifactId>parent</artifactId>
-    <version>1.0.1-RELEASE</version>
+    <version>1.0.2-RELEASE</version>
     <packaging>pom</packaging>
 
     <name>winsim</name>
@@ -19,6 +19,7 @@
         <module>mapper</module>
         <module>service</module>
         <module>controller</module>
+        <module>validation</module>
         <module>winsim-starter</module>
     </modules>
     <properties>
@@ -37,9 +38,11 @@
         <fastjson.version>1.2.68</fastjson.version>
         <swagger.version>2.9.2</swagger.version>
         <mysql.version>8.0.20</mysql.version>
-        <guava.version>23.0</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <freemaker.version>2.3.30</freemaker.version>
         <hutool.all>5.3.7</hutool.all>
+        <versions.version>2.7</versions.version>
+        <slf4j.version>1.7.30</slf4j.version>
     </properties>
     <licenses>
         <license>
@@ -71,15 +74,9 @@
             <version>${lombok.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
 
     </dependencies>
@@ -182,6 +179,17 @@
             </plugins>
 
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions.version}</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+            </plugin>
+        </plugins>
+
     </build>
     <profiles>
         <profile>

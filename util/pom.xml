@@ -5,23 +5,14 @@
     <parent>
         <groupId>com.lugew.winsim</groupId>
         <artifactId>parent</artifactId>
-        <version>1.0.1-RELEASE</version>
+        <version>1.0.2-RELEASE</version>
     </parent>
     <artifactId>util</artifactId>
-    <version>1.0.1-RELEASE</version>
     <name>util</name>
-    <description>工具</description>
+    <description>通用工具</description>
 
     <dependencies>
-        <dependency>
-            <groupId>com.lugew.winsim</groupId>
-            <artifactId>code-generator</artifactId>
-            <version>1.0.0-RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper-spring-boot-starter</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>
