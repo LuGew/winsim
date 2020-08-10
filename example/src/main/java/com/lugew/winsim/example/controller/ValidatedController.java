@@ -86,6 +86,7 @@ public class ValidatedController {
         return ok();
     }
 
+
     protected ResponseEntity<?> ok() {
         return ok(null);
     }

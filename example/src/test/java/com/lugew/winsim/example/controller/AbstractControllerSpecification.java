@@ -34,6 +34,11 @@ public abstract class AbstractControllerSpecification {
                 .build();
     }
 
+    protected <C> void setUp(C controller) {
+        mockMvc = MockMvcBuilders.standaloneSetup(controller)
+                .build();
+    }
+
     protected boolean isPrintable() {
         return this.printable;
     }
@@ -44,12 +49,17 @@ public abstract class AbstractControllerSpecification {
 
     protected ResultActions post(String uriTemplate, Object
             object) throws Exception {
+        return post(uriTemplate, object, MockMvcResultMatchers.status().isOk());
+    }
+
+    protected ResultActions post(String uriTemplate, Object
+            object, ResultMatcher httpStatusMatcher) throws Exception {
         ResultActions resultActions = mockMvc.perform(
                 MockMvcRequestBuilders.post(uriTemplate)
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
                         .content(JSONObject.toJSONString(object))
                         .accept(MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(MockMvcResultMatchers.status().isOk());
+                .andExpect(httpStatusMatcher);
         print(resultActions);
         return resultActions;
     }
