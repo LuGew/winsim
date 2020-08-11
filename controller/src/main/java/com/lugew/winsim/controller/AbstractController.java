@@ -4,8 +4,7 @@ package com.lugew.winsim.controller;
 import com.lugew.winsim.controller.response.GeneralResponse;
 import com.lugew.winsim.controller.response.Response;
 import com.lugew.winsim.entity.Entity;
-import com.lugew.winsim.entity.validator.Add;
-import com.lugew.winsim.entity.validator.Update;
+import com.lugew.winsim.entity.validator.*;
 import com.lugew.winsim.service.Service;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,14 +27,14 @@ public abstract class AbstractController<T extends Entity<?>, I extends Service<
     @Override
     @ApiOperation(value = "列表")
     @PostMapping(value = "/getList")
-    public ResponseEntity<?> getList(@RequestBody T entity) {
+    public ResponseEntity<?> getList(@RequestBody @Validated({GetList.class}) T entity) {
         return ok(service.getList(entity));
     }
 
     @Override
     @ApiOperation(value = "分页列表")
     @PostMapping(value = "/getListPage")
-    public ResponseEntity<?> getListPage(@RequestBody T entity) {
+    public ResponseEntity<?> getListPage(@RequestBody @Validated({GetListPage.class}) T entity) {
         return ok(service.getListPage(entity));
     }
 
@@ -49,7 +48,7 @@ public abstract class AbstractController<T extends Entity<?>, I extends Service<
     @Override
     @ApiOperation(value = "添加")
     @PostMapping(value = "/add")
-    public ResponseEntity<?> add(@RequestBody @Validated(value = {Add.class}) T entity) {
+    public ResponseEntity<?> add(@RequestBody @Validated({Add.class}) T entity) {
         service.insertNotNull(entity);
         return ok();
     }
@@ -57,7 +56,7 @@ public abstract class AbstractController<T extends Entity<?>, I extends Service<
     @Override
     @ApiOperation(value = "更新")
     @PostMapping(value = "/update")
-    public ResponseEntity<?> update(@RequestBody @Validated(value = {Update.class}) T entity) {
+    public ResponseEntity<?> update(@RequestBody @Validated({Update.class}) T entity) {
         service.updateNotNull(entity);
         return ok();
     }
@@ -65,7 +64,7 @@ public abstract class AbstractController<T extends Entity<?>, I extends Service<
     @Override
     @ApiOperation(value = "删除")
     @PostMapping(value = "/delete")
-    public ResponseEntity<?> delete(@RequestBody T entity) {
+    public ResponseEntity<?> delete(@RequestBody @Validated({Delete.class}) T entity) {
         entity.setDeleted(true);
         service.updateNotNull(entity);
         return ok();
