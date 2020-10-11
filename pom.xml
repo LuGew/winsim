@@ -43,6 +43,7 @@
         <hutool.all>5.3.7</hutool.all>
         <versions.version>2.7</versions.version>
         <slf4j.version>1.7.30</slf4j.version>
+        <swagger2.markup.version>1.3.3</swagger2.markup.version>
     </properties>
     <licenses>
         <license>
@@ -84,6 +85,11 @@
     <dependencyManagement>
 
         <dependencies>
+            <dependency>
+                <groupId>io.github.swagger2markup</groupId>
+                <artifactId>swagger2markup</artifactId>
+                <version>${swagger2.markup.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>

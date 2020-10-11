@@ -18,6 +18,10 @@
             <artifactId>service</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!--     <dependency>
+                 <groupId>io.github.swagger2markup</groupId>
+                 <artifactId>swagger2markup</artifactId>
+             </dependency>-->
     </dependencies>
 
 
