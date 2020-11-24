@@ -21,6 +21,7 @@
         <module>controller</module>
         <module>validation</module>
         <module>assertion</module>
+        <module>wu-neng</module>
         <module>winsim-starter</module>
     </modules>
     <properties>
